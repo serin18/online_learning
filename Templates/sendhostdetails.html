@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Jobs</title>
+
+        <link rel="stylesheet" href="style.css">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+            integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+        <style>
+        body {
+    background-color: lightblue;
+}
+.registration-box {
+            background-color: #1A3763;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); /* 3D effect */
+            transition: all 0.3s ease-in-out; /* Smooth transition */
+        }
+        .registration-box:hover {
+            transform: translateY(-5px); /* Move up slightly on hover */
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5); /* Increased shadow on hover */
+        }
+        label{
+        color:white
+        }
+    </style>
+    </head>
+
+    <body>
+
+        <!-- body starts -->
+        <!-- Section: Design Block -->
+        <section>
+
+            <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+                <div class="row gx-lg-5 align-items-center mb-5 d-flex justify-content-center">
+
+
+                    <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+                        <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+                        <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+
+                        <div>
+                            <div class="registration-box">
+                                <form method="post" action="./41">
+                                    {{form.errors}}
+                                    <!-- 2 column grid layout with text inputs for the first and last names -->
+                                    {% csrf_token %}
+                                    <!-- Email input -->
+                                    <div class="form-outline mb-2">
+                                        <label class="form-label" for="form3Example3">DATE</label>
+                                        <input name="date" type="date" id="form3Example3" class="form-control" />
+                                    </div>
+
+                                    <div class="form-outline mb-2">
+                                        <label class="form-label" for="form3Example4">TIME</label>
+                                        <input name="starting_time" type="time" id="form3Example4" class="form-control" />
+                                    </div>
+
+                                    <div class="form-outline mb-2">
+                                        <label class="form-label" for="form3Example5">DURATION</label>
+                                        <input name="duration" type="text" id="form3Example5" class="form-control" />
+                                    </div>
+
+                                    <!-- Dropdown input -->
+                                    <div class="form-outline mb-2">
+                                        <label class="form-label" for="form3Example6">SUBJECT</label>
+                                        <select name="subject" id="form3Example6" class="form-select">
+                                            <option value="" disabled selected>Select subject</option>
+                                            <option value="Python">Python</option>
+                                            <option value="Data Science">Data Science</option>
+                                            <option value="Mern Stack">Mern Stack</option>
+                                            <option value="Digital Marketing">Digital Marketing</option>
+                                            <option value="Flutter Developer">Flutter</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-outline mb-2">
+                                        <label class="form-label" for="form3Example5">Topic</label>
+                                        <input name="topic" type="text" id="form3Example5" class="form-control" />
+                                    </div>
+
+                                    <!-- Submit button -->
+                                    <div class="d-flex justify-content-center mt-4">
+                                        <button type="submit" class="btn btn-primary btn-block mb-4">
+                                            CREATE
+                                        </button>
+                                    </div>
+
+
+                                    <!-- Register buttons -->
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Section: Design Block -->
+        <!-- body ends -->
+    </body>
+
+    </html>

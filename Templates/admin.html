@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Education Website</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #002366; /* Dark blue color */
+            padding-top: 20px;
+        }
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            display: block;
+        }
+        .sidebar a:hover {
+            background-color: #575d63;
+        }
+        .content {
+            margin-left: 260px;
+            padding: 20px;
+            background-color: lightblue;
+            min-height: 100vh;
+        }
+        .header {
+            padding: 10px 20px;
+            background-color: #002366; /* Dark blue color */
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: calc(100% - 250px);
+            top: 0;
+            left: 250px;
+            z-index: 1;
+        }
+        .header .logout-btn {
+            color: white;
+            background-color: #dc3545;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+        .charts {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 80px;
+        }
+        .chart-container {
+            width: 45%;
+            margin-bottom: 20px;
+        }
+        .card {
+            margin-bottom: 20px;
+            background-color: #D6D6D6;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar" role="navigation" aria-label="Main Navigation">
+        <h2 class="text-center text-white">Admin Panel</h2>
+        <a href="#dashboard">Dashboard</a>
+        <a href="./approvetutor">Approve Tutor</a>
+        <a href="./54">View Tutors</a>
+        <a href="./managestudent">Manage Students</a>
+        <a href="./56">Scheduled classes</a>
+        <a href="./57">Booking Details</a>
+        <a href="./">Logout</a>
+    </div>
+
+
+    <div class="content">
+        <div class="container">
+            <div class="card">
+                <div class="card-body">
+                    <h2 id="dashboard">ADMIN DASHBOARD</h2>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <div class="charts">
+                        <div class="chart-container">
+                            <canvas id="studentChart" width="400" height="400"></canvas>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="courseChart" width="400" height="400"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Logout function
+        function logout() {
+            // Perform logout operations here
+            alert("Logging out...");
+        }
+
+        // Student Chart
+        var ctx1 = document.getElementById('studentChart').getContext('2d');
+        var studentChart = new Chart(ctx1, {
+            type: 'bar',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+                datasets: [{
+                    label: 'Number of Students',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Course Chart
+        var ctx2 = document.getElementById('courseChart').getContext('2d');
+        var courseChart = new Chart(ctx2, {
+            type: 'pie',
+            data: {
+                labels: ['Python', 'Data Science', 'MERN Stack', 'Digital Marketing', 'Flutter Developer'],
+                datasets: [{
+                    label: 'Courses Distribution',
+                    data: [20, 15, 10, 5, 8],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true
+            }
+        });
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+

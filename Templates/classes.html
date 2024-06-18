@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    {% load static %}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="A free education template" />
+    <meta name="author" content="Author Name" />
+    <title>Free Education Template</title>
+    <!-- BOOTSTRAP CORE STYLE CSS -->
+    <link href="{% static 'assets/css/bootstrap.css' %}" rel="stylesheet" />
+    <!-- FONT AWESOME CSS -->
+    <link href="{% static 'assets/css/font-awesome.min.css' %}" rel="stylesheet" />
+    <!-- CUSTOM STYLE CSS -->
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css' />
+    <style>
+        body{
+            background-color: lightblue;
+        }
+        .profile-box {
+            margin-top: 4cm;
+        }
+        .schedule-box {
+            margin-top: 1cm;
+        }
+        .profile-picture {
+            width: 4cm;  /* Set the desired width */
+            height: auto; /* Let the height adjust proportionally */
+            border-radius: 50%; /* Optional: make it circular */
+            object-fit: cover; /* Optional: ensure it covers the area */
+        }
+        #searchBox {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 300px;
+            margin-right: 10px;
+        }
+
+        /* Style for the button */
+        #joinButton {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* Hover effect for the button */
+        #joinButton:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top" id="menu">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <h3><b>EDU-CENTER</b></h3>
+        </div>
+        <div class="navbar-collapse collapse move-me">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="./18">HOME</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Profile Box -->
+<div class="container profile-box">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">User Profile</h3>
+                </div>
+                <div class="panel-body text-center">
+                    {% for user in data %}
+                        <img src="{{ user.photo.url }}" alt="Profile Picture" class="profile-picture">
+                        <h4><strong>Name   :   </strong>{{ user.user_name }}</h4>
+                        <p><strong>E-mail   :   </strong>{{ user.email }}</p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Schedule Box -->
+{% for i in data1 %}
+<div class="container schedule-box">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Schedule Details</h3>
+                </div>
+                <div class="panel-body">
+                    <p><strong>Date:</strong> {{ i.date }}</p>
+                    <p><strong>Time:</strong> {{ i.time }}</p>
+                    <p><strong>Duration:</strong> {{ i.duration }}</p>
+                    <p><strong>Subject:</strong> {{ i.subject }}</p>
+                    <p><strong>Topic:</strong> {{ i.topic }}</p>
+                    <form id="searchForm">
+                        <input type="text" id="searchBox" placeholder="Enter link...">
+                        <button type="button" id="joinButton">Join</button>
+                    </form>
+
+                    <script>
+                        document.getElementById("joinButton").addEventListener("click", function() {
+                            var contentPath = document.getElementById("searchBox").value;
+                            // Construct the new URL path and navigate to it
+                            window.location.href = contentPath;
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+<!-- BOOTSTRAP CORE SCRIPT JS -->
+<script src="{% static 'assets/js/jquery-1.11.1.js' %}"></script>
+<script src="{% static 'assets/js/bootstrap.js' %}"></script>
+</body>
+</html>

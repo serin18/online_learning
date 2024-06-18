@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top IT Companies in India</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #e6f7ff; /* light blue */
+            color: #333;
+        }
+
+        h1, h3 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .box {
+            border: 1px solid #ced4da;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            background-color: #2E335A; /* dark blue */
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .box img {
+            width: 300px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .company-name {
+            color: #007bff;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .company-description {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .apply-btn {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-transform: uppercase;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .apply-btn:hover {
+            background-color: #218838;
+        }
+
+        .navbar {
+            background-color: #2E335A; /* dark blue */
+        }
+
+        .navbar-brand {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand ml-auto" href="./18">Home</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <br><h1><b>Top 6 IT Companies in India</b></h1>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="box">
+                    <img src="{% static 'assets/img/tata.jpg' %}" alt="Tata Consultancy Services" class="img-responsive"/>
+                    <h3 class="company-name">Tata Consultancy Services</h3>
+                    <p class="company-description">TCS is a global leader in IT services, consulting, and business solutions. It is headquartered in Mumbai and operates in 46 countries.</p>
+                    <a href="./52" class="apply-btn">Apply Now <i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="box">
+                    <img src="{% static 'assets/img/infosys.jpg' %}" alt="Infosys" class="img-responsive"/>
+                    <h3 class="company-name">Infosys</h3>
+                    <p class="company-description">Infosys is a multinational corporation that provides business consulting, information technology, and outsourcing services. It is headquartered in Bangalore.</p>
+                    <a href="./52" class="apply-btn">Apply Now <i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="box">
+                    <img src="{% static 'assets/img/wipro.jpg' %}" alt="Wipro" class="img-responsive"/>
+                    <h3 class="company-name">Wipro</h3>
+                    <p class="company-description">Wipro Limited is a leading global information technology, consulting, and business process services company. It is headquartered in Bangalore.</p>
+                    <a href="./52" class="apply-btn">Apply Now <i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="box">
+                    <img src="{% static 'assets/img/hcl.jpg' %}" alt="hcl" class="img-responsive"/>
+                    <h3 class="company-name">HCL Technologies</h3>
+                    <p class="company-description">HCL Technologies is a next-generation global technology company that helps enterprises reimagine their businesses for the digital age. It is headquartered in Noida.</p>
+                    <a href="./52" class="apply-btn">Apply Now <i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="box">
+                    <img src="{% static 'assets/img/mahindra.jpg' %}" alt="mahindra" class="img-responsive"/>
+                    <h3 class="company-name">Tech Mahindra</h3>
+                    <p class="company-description">Tech Mahindra offers innovative and customer-centric information technology services and solutions, enabling enterprises, associates, and the society to rise.</p>
+                    <a href="./52" class="apply-btn">Apply Now <i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="box">
+                    <img src="{% static 'assets/img/mindtree.jpg' %}" alt="mindtree" class="img-responsive"/>
+                    <h3 class="company-name">Mindtree</h3>
+                    <p class="company-description">Mindtree is a global technology consulting and services company that delivers digital transformation and technology services from ideation to execution. It is headquartered in Bangalore.</p>
+                    <a href="./52" class="apply-btn">Apply Now <i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Font Awesome JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
+</body>
+</html>

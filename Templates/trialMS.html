@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    {% load static %}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Free Education Template</title>
+    <!-- BOOTSTRAP CORE STYLE CSS -->
+    <link href="{% static 'assets/css/bootstrap.css' %}" rel="stylesheet" />
+    <!-- FONT AWESOME CSS -->
+<link href="{% static 'assets/css/font-awesome.min.css' %}" rel="stylesheet" />
+     <!-- FLEXSLIDER CSS -->
+<link href="{% static 'assets/css/flexslider.css' %}" rel="stylesheet" />
+    <!-- CUSTOM STYLE CSS -->
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet" />
+  <!-- Google	Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css' />
+    <style>
+        body {
+            background-color: lightblue;
+        }
+        .registration-box {
+            background-color: #1A3763;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); /* 3D effect */
+            transition: all 0.3s ease-in-out; /* Smooth transition */
+        }
+        .registration-box:hover {
+            transform: translateY(-5px); /* Move up slightly on hover */
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5); /* Increased shadow on hover */
+        }
+        label{
+        color:white
+        }
+    </style>
+</head>
+<body >
+
+ <div class="navbar navbar-inverse navbar-fixed-top " id="menu">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <h3><b>EDU-CENTER</b></h3>
+            </div>
+            <div class="navbar-collapse collapse move-me">
+                <ul class="nav navbar-nav navbar-right">
+                    <li ><a href="./6">HOME</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <!--HOME SECTION TAG LINE END-->
+         <div id="features-sec" class="container set-pad" >
+             <div class="row text-center">
+                 <div class="col-lg-8 col-lg-offset-2 col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2">
+                     <h1 data-scroll-reveal="enter from the bottom after 0.2s"  class="header-line">3 DAY TRIAL</h1>
+                 </div>
+
+             </div>
+             <!--/.HEADER LINE END-->
+           <div class="row set-row-pad"  data-scroll-reveal="enter from the bottom after 0.5s" >
+
+
+                 <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
+                    <form id="register-form" role="form" method="post" action="./29" enctype="multipart/form-data" class="registration-box">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label>Course</label>
+                            <input type="text" id="course" name="course" class="form-control "  required="required" value="Mern Stack" readonly/>
+                        </div>
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" id="name" name="name" class="form-control "  required="required" placeholder="Your Name" />
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="text" id="email" name="email" class="form-control " required="required"  placeholder="Your Email" />
+                        </div>
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <input type="text" id="phone" name="phone" class="form-control " required="required"  placeholder="Your Contact" />
+                        </div>
+                        <div class="form-group">
+                            <label>Date</label>
+                            <input type="date" id="date" name="date" class="form-control " required="required"  placeholder="Date of Starting" />
+                        </div>
+                        <div class="form-group">
+                            <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_OL5nwYu6zdy2Ou" async> </script>
+                        </div>
+                        <div class="form-group">
+                            <label>Payment ID</label>
+                            <input type="text" id="payid" name="payid" class="form-control "  required="required" placeholder="Payment ID">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" id="register" name="register" class="btn btn-primary btn-block btn-lg">BOOK</button>
+                        </div>
+
+                    </form>
+                </div>
+
+
+
+
+
+
+               </div>
+                </div>
+          </div>
+       </div>
+     <div class="container">
+             <div class="row set-row-pad"  >
+                <div class="col-lg-4 col-md-4 col-sm-4   col-lg-offset-1 col-md-offset-1 col-sm-offset-1 " data-scroll-reveal="enter from the bottom after 0.4s">
+
+
+
+
+                </div>
+
+
+             </div>
+     </div>
+     <!-- CONTACT SECTION END-->
+    <div id="footer">
+          &copy 2014 yourdomain.com | All Rights Reserved |  <a href="http://binarytheme.com" style="color: #fff" target="_blank">Design by : binarytheme.com</a>
+    </div>
+     <!-- FOOTER SECTION END-->
+
+    <!--  Jquery Core Script -->
+    <script src="{% static 'assets/js/jquery-1.10.2.js' %}"></script>
+    <!--  Core Bootstrap Script -->
+    <script src="{% static 'assets/js/bootstrap.js' %}"></script>
+    <!--  Flexslider Scripts -->
+         <script src="{% static 'assets/js/jquery.flexslider.js' %}"></script>
+     <!--  Scrolling Reveal Script -->
+    <script src="{% static 'assets/js/scrollReveal.js' %}"></script>
+    <!--  Scroll Scripts -->
+    <script src="{% static 'assets/js/jquery.easing.min.js' %}"></script>
+    <!--  Custom Scripts -->
+         <script src="{% static 'assets/js/custom.js' %}"></script>
+</body>
+</html>

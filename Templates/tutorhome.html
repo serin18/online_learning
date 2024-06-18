@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    {% load static %}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Free Education Template</title>
+    <!-- BOOTSTRAP CORE STYLE CSS -->
+    <link href="{% static 'assets/css/bootstrap.css' %}" rel="stylesheet" />
+    <!-- FONT AWESOME CSS -->
+    <link href="{% static 'assets/css/font-awesome.min.css' %}" rel="stylesheet" />
+    <!-- FLEXSLIDER CSS -->
+    <link href="{% static 'assets/css/flexslider.css' %}" rel="stylesheet" />
+    <!-- CUSTOM STYLE CSS -->
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css' />
+    <style>
+        body {
+            background-color: lightblue;
+        }
+
+        .intro-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Add box shadow for 3D effect */
+            background: linear-gradient(to bottom, #0155AB, #000000);
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top " id="menu">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <h3><b>EDU-CENTER</b></h3>
+        </div>
+        <div class="navbar-collapse collapse move-me">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="40">SCHEDULE CLASS</a></li>
+                <li><a href="./46">START CLASS</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">PROGRESS <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="./60">INTERVIEW REQUESTS</a></li>
+                        <li><a href="./46">INTERVIEW</a></li>
+                        <li><a href="./46">RESUME CREATION</a></li>
+                    </ul>
+                </li>
+                <li><a href="./">LOGOUT</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="home-sec" id="home">
+    <div class="overlay">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="flexslider set-flexi" id="main-section">
+                        <ul class="slides move-me">
+                            <!-- Slider 01 -->
+                            <li>
+                                <h3>Delivering Quality Education</h3>
+                                <h1>THE UNIQUE METHOD</h1>
+                                <a href="#courses" class="btn btn-info btn-lg">INSTRUCTIONS</a>
+                                <a href="./46" class="btn btn-success btn-lg">START CLASS</a>
+                            </li>
+                            <!-- End Slider 01 -->
+                            <!-- Slider 02 -->
+                            <li>
+                                <h3>Delivering Quality Education</h3>
+                                <h1>UNMATCHED APPROACH</h1>
+                                <a href="#courses" class="btn btn-info btn-lg">INSTRUCTIONS</a>
+                                <a href="./46" class="btn btn-success btn-lg">START CLASS</a>
+                            </li>
+                            <!-- End Slider 02 -->
+                            <!-- Slider 03 -->
+                            <li>
+                                <h3>Delivering Quality Education</h3>
+                                <h1>AWESOME FACULTY PANEL</h1>
+                                <a href="#courses" class="btn btn-info btn-lg">INSTRUCTIONS</a>
+                                <a href="./46" class="btn btn-success btn-lg">START CLASS</a>
+                            </li>
+                            <!-- End Slider 03 -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- HOME SECTION END -->
+<div class="tag-line">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <h2 data-scroll-reveal="enter from the bottom after 0.1s"><i class="fa fa-circle-o-notch"></i> WELCOME TUTOR <i class="fa fa-circle-o-notch"></i></h2>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- HOME SECTION TAG LINE END -->
+<div id="features-sec" class="container set-pad">
+    <div class="row text-center">
+        <div class="col-lg-8 col-lg-offset-2 col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2">
+            <div class="intro-container" data-scroll-reveal="enter from the bottom after 0.2s">
+                <h1 style="color:white" class="header-line" id="courses">INSTRUCTIONS</h1>
+                <p style="color:white">
+                    List the subjects and topics you can teach, along with any specialized areas or levels of instruction. Communicate
+                    promptly and clearly with students, addressing inquiries and messages in a timely manner. Prepare thoroughly for
+                    each session, reviewing material and planning engaging activities. Provide constructive feedback to students after
+                    each session, acknowledging progress and offering guidance for improvement. Maintain professionalism in all
+                    interactions, being punctual, respectful, and courteous. Be flexible and adaptable to students' needs and preferences,
+                    adjusting your teaching style accordingly. Continuously seek opportunities for professional development and growth
+                    to enhance your teaching skills and effectiveness.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br><br>
+<!--/.HEADER LINE END-->
+    <div id="footer">
+
+    </div>
+     <!-- FOOTER SECTION END-->
+
+    <!--  Jquery Core Script -->
+    <script src="{% static 'assets/js/jquery-1.10.2.js' %}"></script>
+    <!--  Core Bootstrap Script -->
+    <script src="{% static 'assets/js/bootstrap.js' %}"></script>
+    <!--  Flexslider Scripts -->
+         <script src="{% static 'assets/js/jquery.flexslider.js' %}"></script>
+     <!--  Scrolling Reveal Script -->
+    <script src="{% static 'assets/js/scrollReveal.js' %}"></script>
+    <!--  Scroll Scripts -->
+    <script src="{% static 'assets/js/jquery.easing.min.js' %}"></script>
+    <!--  Custom Scripts -->
+         <script src="{% static 'assets/js/custom.js' %}"></script>
+</body>
+</html>

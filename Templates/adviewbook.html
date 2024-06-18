@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Education Website</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #002366;
+            padding-top: 20px;
+        }
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            display: block;
+        }
+        .sidebar a:hover {
+            background-color: #575d63;
+        }
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+        .table-responsive {
+            overflow-x: auto;
+        }
+        .table th, .table td {
+            vertical-align: middle;
+        }
+        .table th {
+            background-color: #002366;
+            color: white;
+        }
+        .table tbody {
+            background-color: #D6D6D6; /* Slightly more grey background */
+        }
+        .table tbody tr:nth-child(even) {
+            background-color: #D6D6D6;
+        }
+        .table tbody tr:hover {
+            background-color: #D6D6D6;
+        }
+        .btn-approve {
+            background-color: #28a745;
+            color: white;
+            border: none;
+        }
+        .btn-approve:hover {
+            background-color: #218838;
+            color: white;
+        }
+        .btn-reject {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+        }
+        .btn-reject:hover {
+            background-color: #c82333;
+            color: white;
+        }
+        body {
+            background-color: lightblue;
+        }
+        .card {
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1); /* 3D shadow effect */
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar" role="navigation" aria-label="Main Navigation">
+        <h2 class="text-center text-white">Admin Panel</h2>
+        <a href="./36">Dashboard</a>
+    </div>
+
+    <div class="content">
+        <div class="container">
+            <div class="card">
+                <div class="card-body">
+                    <h2>Python</h2>
+                    <div class="table-responsive">
+                        {% if data %}
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>D.O.B</th>
+                                    <th>Qualification</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Add rows dynamically with backend integration -->
+                                {% for i in data %}
+                                <tr>
+                                    <td>{{ i.full_name }}</td>
+                                    <td>{{ i.email }}</td>
+                                    <td>{{ i.phone }}</td>
+                                    <td>{{ i.dob }}</td>
+                                    <td>{{ i.qualification }}</td>
+                                </tr>
+                                {% endfor %}
+                                <!-- Add more rows as needed -->
+                            </tbody>
+                        </table>
+                        {% else %}
+                        <h4 class="wow-fadeInUp" data-wow-delay="0.4s">No Python Students</h4>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="container">
+            <div class="card">
+                <div class="card-body">
+                    <h2>Data Science</h2>
+                    <div class="table-responsive">
+                        {% if data1 %}
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>D.O.B</th>
+                                    <th>Qualification</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Add rows dynamically with backend integration -->
+                                {% for i in data1 %}
+                                <tr>
+                                    <td>{{ i.full_name }}</td>
+                                    <td>{{ i.email }}</td>
+                                    <td>{{ i.phone }}</td>
+                                    <td>{{ i.dob }}</td>
+                                    <td>{{ i.qualification }}</td>
+                                </tr>
+                                {% endfor %}
+                                <!-- Add more rows as needed -->
+                            </tbody>
+                        </table>
+                        {% else %}
+                        <h4 class="wow-fadeInUp" data-wow-delay="0.4s">No Data Science Students</h4>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="container">
+            <div class="card">
+                <div class="card-body">
+                    <h2>Mern Stack</h2>
+                    <div class="table-responsive">
+                        {% if data2 %}
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>D.O.B</th>
+                                    <th>Qualification</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Add rows dynamically with backend integration -->
+                                {% for i in data2 %}
+                                <tr>
+                                    <td>{{ i.full_name }}</td>
+                                    <td>{{ i.email }}</td>
+                                    <td>{{ i.phone }}</td>
+                                    <td>{{ i.dob }}</td>
+                                    <td>{{ i.qualification }}</td>
+                                </tr>
+                                {% endfor %}
+                                <!-- Add more rows as needed -->
+                            </tbody>
+                        </table>
+                        {% else %}
+                        <h4 class="wow-fadeInUp" data-wow-delay="0.4s">No Mern Stack Students</h4>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="container">
+            <div class="card">
+                <div class="card-body">
+                    <h2>Digital Marketing</h2>
+                    <div class="table-responsive">
+                        {% if data3 %}
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>D.O.B</th>
+                                    <th>Qualification</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Add rows dynamically with backend integration -->
+                                {% for i in data3 %}
+                                <tr>
+                                    <td>{{ i.full_name }}</td>
+                                    <td>{{ i.email }}</td>
+                                    <td>{{ i.phone }}</td>
+                                    <td>{{ i.dob }}</td>
+                                    <td>{{ i.qualification }}</td>
+                                </tr>
+                                {% endfor %}
+                                <!-- Add more rows as needed -->
+                            </tbody>
+                        </table>
+                        {% else %}
+                        <h4 class="wow-fadeInUp" data-wow-delay="0.4s">No Digital Marketing Students</h4>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="container">
+            <div class="card">
+                <div class="card-body">
+                    <h2>Flutter Developer</h2>
+                    <div class="table-responsive">
+                        {% if data4 %}
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>D.O.B</th>
+                                    <th>Qualification</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Add rows dynamically with backend integration -->
+                                {% for i in data4 %}
+                                <tr>
+                                    <td>{{ i.full_name }}</td>
+                                    <td>{{ i.email }}</td>
+                                    <td>{{ i.phone }}</td>
+                                    <td>{{ i.dob }}</td>
+                                    <td>{{ i.qualification }}</td>
+                                </tr>
+                                {% endfor %}
+                                <!-- Add more rows as needed -->
+                            </tbody>
+                        </table>
+                        {% else %}
+                        <h4 class="wow-fadeInUp" data-wow-delay="0.4s">No Flutter Developer Students</h4>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
